@@ -1,36 +1,152 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ FitLog — Workout Library
 
-## Getting Started
+A dark, no-nonsense gym companion built with Next.js, TypeScript, and Tailwind CSS. FitLog lets you browse a library of workouts, view full details for each lift, and build a daily training plan — plus save workouts for later.
 
-First, run the development server:
+---
+
+## 🌐 Project Overview
+
+**FitLog** is a workout tracking web app designed to help lifters plan and log their training sessions.
+
+The app is split into three main areas:
+
+- **Workout Library** — browse all available workouts as cards
+- **Workout Details** — full breakdown of a single workout (equipment, difficulty, sets/reps, instructions)
+- **My Plan** — today's plan and a saved-for-later list, with sorting and progress tracking
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- ⚛️ Next.js (App Router)
+- 🔷 TypeScript
+- ⚛️ React
+- 🎨 Tailwind CSS
+
+### Libraries
+
+- `lucide-react` — Icons
+- `react-toastify` — Success and error notifications
+
+### Data
+
+- 🌐 Remote API — Workout data is fetched from an external endpoint (`WORKOUTS_API_URL`)
+
+---
+
+## ✨ Features
+
+### 1. 🔎 Explore Workouts
+
+Browse the workout library with key info at a glance:
+
+- Name and muscle groups
+- Equipment required
+- Duration, calories burned, and rating
+
+### 2. 📋 Workout Details
+
+Each workout has its own page with:
+
+- Full description and muscle groups
+- Specs panel (equipment, difficulty, sets, reps, duration, calories, rating)
+- Step-by-step instructions
+- Buttons to add the workout to today's plan or save it for later
+
+### 3. 🗓️ Build Your Plan
+
+- Add up to 5 workouts to **Today's Plan**
+- Mark workouts as done/incomplete
+- Save workouts to a separate **Saved** list and move them into the plan later
+- Remove workouts from either list
+- Sort by duration, calories burned, or rating
+- See totals for exercises, minutes, and calories at a glance
+
+### 4. 📱 Responsive Design
+
+- Responsive navbar with a mobile hamburger menu
+- Responsive workout grid and detail layout
+- Mobile-friendly plan/saved tabs
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── app/
+│   ├── page.tsx                 # Home — banner + workout library
+│   ├── layout.tsx
+│   ├── not-found.tsx
+│   ├── fitlog/
+│   │   └── [workoutId]/
+│   │       └── page.tsx         # Workout details page
+│   └── my-plan/
+│       └── page.tsx             # Today's plan / saved list
+│
+├── components/
+│   ├── Banner.tsx
+│   ├── Footer.tsx
+│   ├── Navbar.tsx
+│   ├── PlanCard.tsx
+│   ├── WorkoutCard.tsx
+│   ├── Workouts.tsx
+│   └── workoutDetails/
+│       ├── AddToPlanButton.tsx
+│       └── SaveForLaterButton.tsx
+│
+├── context/
+│   └── PlanContext.tsx          # Plan, saved, and completed state
+│
+├── library/
+│   └── getWorkouts.ts           # Fetches workout data from the API
+│
+└── types/
+    └── workout.ts
+```
+
+---
+
+## ⚙️ Getting Started
+
+First, install dependencies and set up your environment variable:
+
+```bash
+npm install
+```
+
+Create a `.env.local` file in the project root:
+
+```env
+WORKOUTS_API_URL=https://your-api-url.com/workouts
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📌 Future Improvements
 
-## Learn More
+Some features that could be added in the future:
 
-To learn more about Next.js, take a look at the following resources:
+- 💾 Persist plan/saved lists (localStorage or a backend)
+- 🔍 Search and filter workouts by muscle group or equipment
+- 📊 Weekly/monthly progress history
+- 🌙 Light mode toggle
+- 👤 User accounts and cross-device sync
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👨‍💻 Author
 
-## Deploy on Vercel
+**MD. SHOHANUR RAHMAN SHOHAN**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ using Next.js, TypeScript, and Tailwind CSS.
