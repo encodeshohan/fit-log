@@ -39,7 +39,7 @@ const PlanCard = ({
                     <h3 className="font-secondary text-sm font-extrabold uppercase tracking-wide text-white">
                         {workout.name}
                     </h3>
-                    <p className="mb-2 text-xs text-muted">{workout.equipment}</p>
+                    <p className="my-2 text-xs text-muted">{workout.equipment}</p>
 
                     <div className="flex flex-wrap items-center gap-4 text-xs text-muted">
                         <span className="flex items-center gap-1.5">
