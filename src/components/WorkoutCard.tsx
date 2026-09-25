@@ -15,13 +15,13 @@ const WorkoutCard = ({ workout }: IWorkoutCardProps) => {
         >
             <div>
                 {/*Card Image */}
-                <div className="relative h-48 w-full overflow-hidden bg-line">
+                <div className="relative w-full aspect-16/10 overflow-hidden bg-line">
                     <Image
                         src={workout.image}
                         alt={workout.name}
                         fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transition duration-300 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-center transition duration-300 group-hover:scale-105"
                     />
                 </div>
 
