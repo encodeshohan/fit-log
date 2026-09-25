@@ -1,6 +1,8 @@
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
 
 const Banner = () => {
     return (
@@ -29,9 +31,9 @@ const Banner = () => {
                     {/* Button */}
                     <Link
                         href="#library"
-                        className="cursor-pointer rounded-md bg-lime px-6 py-3 font-primary text-xs font-bold text-black transition hover:brightness-90"
+                        className="inline-flex items-center gap-2 cursor-pointer rounded-md bg-lime px-6 py-3 font-primary text-xs font-bold text-black transition hover:brightness-90"
                     >
-                        BROWSE WORKOUTS
+                        BROWSE WORKOUTS <ChevronDown className="h-4 w-4" />
                     </Link>
                 </div>
 
