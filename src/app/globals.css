@@ -3,4 +3,14 @@
 @theme inline {
   --font-primary: var(--font-inter), system-ui, sans-serif;
   --font-secondary: var(--font-oswald), Impact, sans-serif;
+
+
+  --color-lime: #c2f800;
+  --color-card: #15171d;
+  --color-line: #222630;
+  --color-muted: #9ca3af;
+  --color-surface: #090a0d;
+  --color-light: #e5e7eb;
+  --color-dark: #151922;
+  --color-gray-light: #d1d5db;
 }
