@@ -13,17 +13,17 @@ const AddToPlanButton = ({ workout }: { workout: IWorkout }) => {
         const alreadyAdded = planList.some((item) => item.id === workout.id);
 
         if (alreadyAdded) {
-            toast.info("Already in today's plan");
+            toast.info("Already in today's plan!");
             return;
         }
 
         if (planList.length >= 5) {
-            toast.error("Plan cap reached (max 5 lifts)");
+            toast.error("Plan limit reached. You can add up to 5 lifts.");
             return;
         }
 
         setPlanList([...planList, workout]);
-        toast.success(`"${workout.name}" added to today's plan`);
+        toast.success(`${workout.name} added to today's plan`);
     };
 
     return (

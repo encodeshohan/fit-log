@@ -13,12 +13,12 @@ const SaveForLaterButton = ({ workout }: { workout: IWorkout }) => {
         const alreadySaved = savedList.some((item) => item.id === workout.id);
 
         if (alreadySaved) {
-            toast.info("Already in your saved list");
+            toast.info("Already in your saved list!");
             return;
         }
 
         setSavedList([...savedList, workout]);
-        toast.success(`"${workout.name}" saved for later`);
+        toast.success(`${workout.name} saved for later!`);
     };
 
     return (

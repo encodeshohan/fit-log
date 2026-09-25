@@ -56,7 +56,7 @@ const MyPlanContent = () => {
             setCompletedIds(
                 completedIds.filter((id) => id !== String(workout.id)),
             );
-            toast.success("Marked as incomplete");
+            toast.success("Marked as incomplete!");
         } else {
             setCompletedIds([...completedIds, String(workout.id)]);
             toast.success("Marked as done!");
@@ -67,17 +67,17 @@ const MyPlanContent = () => {
         const alreadyAdded = planList.some((item) => item.id === workout.id);
 
         if (alreadyAdded) {
-            toast.info("Already in today's plan");
+            toast.info("Already in today's plan!");
             return;
         }
 
         if (planList.length >= 5) {
-            toast.error("Plan cap reached (max 5 lifts)");
+            toast.error("Plan limit reached. You can add up to 5 lifts.");
             return;
         }
 
         setPlanList([...planList, workout]);
-        toast.success(`"${workout.name}" added to today's plan`);
+        toast.success(`${workout.name} added to today's plan`);
     };
 
     const handleRemove = (workout: IWorkout) => {
@@ -86,10 +86,10 @@ const MyPlanContent = () => {
             setCompletedIds(
                 completedIds.filter((id) => id !== String(workout.id)),
             );
-            toast.success("Removed from plan");
+            toast.success("Removed from plan!");
         } else {
             setSavedList(savedList.filter((item) => item.id !== workout.id));
-            toast.success("Removed from saved");
+            toast.success("Removed from saved!");
         }
     };
 
