@@ -22,7 +22,7 @@ const PlanCard = ({
 }: IPlanCardProps) => {
     return (
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border border-line bg-card p-4 transition hover:border-muted md:flex-row">
-            
+
             {/*Image & Details */}
             <div className="flex w-full items-center gap-5 md:w-auto">
                 <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-xl bg-line">
@@ -71,8 +71,8 @@ const PlanCard = ({
                     <button
                         onClick={onToggleDone}
                         className={`flex cursor-pointer items-center gap-1.5 rounded-xl px-4 py-2.5 text-xs font-bold transition ${isDone
-                                ? "bg-line text-muted hover:text-white"
-                                : "bg-lime text-black hover:brightness-90"
+                            ? "bg-line text-muted hover:text-white"
+                            : "bg-lime text-black hover:brightness-90"
                             }`}
                     >
                         <Check className="h-3.5 w-3.5" />
