@@ -43,8 +43,8 @@ const Navbar = () => {
         <header className="sticky top-0 z-50 border-b border-line bg-surface">
 
             {/* Mobile Version*/}
-            <nav className="container mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-3 px-4 py-6 md:flex md:justify-between md:px-6 lg:px-8">
-                
+            <nav className="container mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-2 px-4 py-6 sm:gap-3 md:flex md:justify-between md:px-6 lg:px-8">
+
                 {/* Hamburger Portion*/}
                 <button
                     type="button"
@@ -57,7 +57,7 @@ const Navbar = () => {
                 </button>
 
                 {/* Logo */}
-                <Link href="/" className="flex items-center justify-center gap-2.5 md:justify-start">
+                <Link href="/" className="hidden items-center justify-center gap-2.5 md:flex md:justify-start">
                     <Image
                         src="/assets/logo.png"
                         width={28}
@@ -74,23 +74,23 @@ const Navbar = () => {
                 <ul className="hidden items-center gap-2 md:flex">{links}</ul>
 
                 {/*Plan & Save Counter*/}
-                <div className="flex items-center justify-end gap-2">
+                <div className="flex items-center justify-end gap-1.5 sm:gap-2">
                     <Link
-                        href="/my-plan"
-                        className="flex items-center gap-2 rounded-full border border-transparent px-3 py-1 text-xs font-medium text-white transition hover:border-line hover:bg-card"
+                        href="/my-plan?tab=plan"
+                        className="flex items-center gap-1.5 rounded-full border border-transparent px-2.5 py-1 text-xs font-medium text-white transition hover:border-line hover:bg-card sm:gap-2 sm:px-3"
                     >
-                        <span className="hidden sm:inline">Plan</span>
-                        <span className="flex h-5 w-5 items-center justify-center rounded-xl bg-lime px-3 text-[11px] font-bold text-black">
+                        <span>Plan</span>
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-xl bg-lime px-3 text-[11px] font-bold text-black">
                             {planList.length}
                         </span>
                     </Link>
 
                     <Link
-                        href="/my-plan"
-                        className="flex items-center gap-2 rounded-full border border-transparent px-3 py-1 text-xs font-medium text-white transition hover:border-line hover:bg-card"
+                        href="/my-plan?tab=saved"
+                        className="flex items-center gap-1.5 rounded-full border border-transparent px-2.5 py-1 text-xs font-medium text-white transition hover:border-line hover:bg-card sm:gap-2 sm:px-3"
                     >
-                        <span className="hidden sm:inline">Saved</span>
-                        <span className="flex h-5 w-5 items-center justify-center rounded-xl border px-3 text-[10px] font-bold text-white">
+                        <span>Saved</span>
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-xl border px-3 text-[10px] font-bold text-white">
                             {savedList.length}
                         </span>
                     </Link>

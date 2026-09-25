@@ -5,13 +5,14 @@ import { PlanContext } from "@/context/PlanContext";
 import { IWorkout } from "@/types/workout";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useContext, useState } from "react";
 import { toast } from "react-toastify";
 
 type TTab = "plan" | "saved";
 type TSortBy = "duration" | "caloriesBurned" | "rating";
 
-const MyPlan = () => {
+const MyPlanContent = () => {
     const {
         planList,
         setPlanList,
@@ -21,15 +22,23 @@ const MyPlan = () => {
         setCompletedIds,
     } = useContext(PlanContext);
 
-    const [activeTab, setActiveTab] = useState<TTab>("plan");
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const tabParam = searchParams.get("tab");
+
+    
+    const activeTab: TTab = tabParam === "saved" ? "saved" : "plan";
     const [sortBy, setSortBy] = useState<TSortBy>("duration");
+
+    const setActiveTab = (tab: TTab) => {
+        router.push(`/my-plan?tab=${tab}`);
+    };
 
     const currentList = activeTab === "plan" ? planList : savedList;
 
-    // Copy first so we never mutate context state
     const sortedList = [...currentList].sort((a, b) => b[sortBy] - a[sortBy]);
 
-    // Live totals for the tab you're looking at
+    // Total
     const totalMinutes = currentList.reduce((sum, w) => sum + w.duration, 0);
     const totalCalories = currentList.reduce(
         (sum, w) => sum + w.caloriesBurned,
@@ -93,8 +102,7 @@ const MyPlan = () => {
                     My Plan
                 </h1>
                 <p className="mt-1 text-sm text-muted">
-                    Cap of five lifts for today ({planList.length}/5). Finish them, then
-                    load more.
+                    Cap of five lifts for today. Finish them, then load more.
                 </p>
             </div>
 
@@ -127,7 +135,7 @@ const MyPlan = () => {
                             : "text-muted hover:text-white"
                             }`}
                     >
-                        Today&apos;s Plan ({planList.length})
+                        Today&apos;s Plan
                     </button>
                     <button
                         onClick={() => setActiveTab("saved")}
@@ -136,7 +144,7 @@ const MyPlan = () => {
                             : "text-muted hover:text-white"
                             }`}
                     >
-                        Saved ({savedList.length})
+                        Saved
                     </button>
                 </div>
 
@@ -196,5 +204,11 @@ const MyPlan = () => {
         </div>
     );
 };
+
+const MyPlan = () => (
+    <Suspense fallback={null}>
+        <MyPlanContent />
+    </Suspense>
+);
 
 export default MyPlan;
