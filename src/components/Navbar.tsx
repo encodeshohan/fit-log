@@ -57,7 +57,7 @@ const Navbar = () => {
                 </button>
 
                 {/* Logo */}
-                <Link href="/" className="hidden items-center justify-center gap-2.5 md:flex md:justify-start">
+                <Link href="/" className="flex items-center justify-center gap-2.5 md:justify-start">
                     <Image
                         src="/assets/logo.png"
                         width={28}
