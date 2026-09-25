@@ -58,7 +58,7 @@ const WorkoutCard = ({ workout }: IWorkoutCardProps) => {
                     <Flame className="font-primary h-3.5 w-3.5" />{" "}
                     {workout.caloriesBurned} kcal
                 </span>
-                <span className="flex items-center gap-1"> 
+                <span className="flex items-center gap-1">
                     <Star className="font-primary h-3.5 w-3.5" />{" "}
                     {workout.rating}
                 </span>
