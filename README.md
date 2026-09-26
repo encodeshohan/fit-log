@@ -64,7 +64,11 @@ Each workout has its own page with:
 - Sort by duration, calories burned, or rating
 - See totals for exercises, minutes, and calories at a glance
 
-### 4. 📱 Responsive Design
+### 4. 🔔 Instant Feedback
+
+Every action — adding to plan, saving for later, marking done, removing, hitting the 5-lift limit — triggers a toast notification, so you always know what just happened.
+
+### 5. 📱 Responsive Design
 
 - Responsive navbar with a mobile hamburger menu
 - Responsive workout grid and detail layout
